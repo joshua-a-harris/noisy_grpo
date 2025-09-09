@@ -1,0 +1,30 @@
+{{- bos_token }}
+{# If the first message is a system message, extract it, remove it from `messages`, and store its content #}
+{%- if messages and messages[0]['role'] == 'system' %}
+    {%- set system_message = messages[0]['content']|trim %}
+    {%- set messages = messages[1:] %}
+{%- else %}
+    {%- set system_message = "" %}
+{%- endif %}
+
+{# Print system message if it exists #}
+{%- if system_message %}
+{{ system_message }}
+{%- endif %}
+
+{# Loop over remaining messages #}
+{%- for message in messages %}
+    {%- if message.role == 'user' %}
+User:
+{{ message.content }}
+    {%- elif message.role == 'assistant' %}
+Assistant:
+{{ message.content }}
+    {%- endif %}
+{%- endfor %}
+
+{# If there's a final assistant message passed in separately, print it #}
+{%- if assistant %}
+Assistant:
+{{ assistant }}
+{%- endif %}

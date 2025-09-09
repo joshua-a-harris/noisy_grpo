@@ -1,0 +1,7 @@
+transformers==4.55.3
+torch==2.8.0
+numpy==2.3.2
+wandb==0.21.1
+pandas==2.3.2
+datasets==4.0.0
+reasoning-gym==0.1.23

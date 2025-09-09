@@ -1,0 +1,49 @@
+
+run_type: 'eval'
+
+# ==============================
+# Seed Configuration
+# ==============================
+seed: 10
+
+# ==============================
+# Device Configuration
+# ==============================
+device: "cuda"
+
+# ==============================
+# Model Configuration
+# ==============================
+model:
+  model_name: meta-llama/Llama-3.2-1B-Instruct
+  chat_template_path: null
+  checkpoint_path: /temp_hps/torchtune/sudoku_noise/checkpoint_final_step
+  tokenizer_path: /temp_hps/hf_model_local/Llama-3.2-1B-Instruct
+  noise_layer: 0
+  noise_scaling_factor: 0
+
+  # ==============================
+  # Dataset Configuration
+  # ==============================
+eval:
+  num_samples: 500
+  dataset: "reasoning-gym"
+  dataset_config:
+    task_name: 'sudoku'
+    min_empty: 30
+    max_empty: 50
+  split: 'test'
+  batch_size: 256
+  system_prompt_path: data/templates/base_sys_prompt.txt
+  num_repeats_per_seq: 1
+  max_gen_toks: 1000
+  tok_sampling: False
+  top_k: null
+  top_p: null
+  temperature: null
+
+# ==============================
+# Reward Configuration
+# ==============================
+reward_funcs:
+  - score_reasoning_gym_sudoku

@@ -1,0 +1,73 @@
+run_type: 'train'
+
+# ==============================
+# Seed Configuration
+# ==============================
+seed: 0
+
+# ==============================
+# Device Configuration
+# ==============================
+device: "mps"
+
+# ==============================
+# Model Configuration
+# ==============================
+model:
+  model_name: Qwen/Qwen2.5-0.5B
+  chat_template_path: /Users/joshharris/PycharmProjects/noisy_rl/data/templates/base_chat_template.txt
+  checkpoint_path: null
+  opt_checkpoint_path: null
+  noise_layer: 0
+  noise_scaling_factor: 0.5
+
+# ==============================
+# Training Configuration
+# ==============================
+train:
+  base_lr: 1e-5
+  epsilon: 0.2
+  lr_scheduler: 'cosine'
+  weight_decay: 0.1
+  batch_size: 1
+  num_repeats_per_seq: 4
+  num_grad_accum_steps: 2
+  num_train_steps: 100
+  mem_efficient_logits: True
+  max_gen_toks: 20
+  tok_sampling: False
+  top_k: null
+  top_p: null
+  temperature: 1.0
+  use_const_noise: True
+  num_samples: 1000
+  dataset: "gsm8k"
+  split: 'train'
+  system_prompt_path: /Users/joshharris/PycharmProjects/noisy_rl/data/templates/base_sys_prompt.txt
+
+# ==============================
+# Eval Dataset Configuration
+# ==============================
+eval:
+  num_samples: 10
+  dataset: "gsm8k"
+  split: 'test'
+  batch_size: 16
+  system_prompt_path: /Users/joshharris/PycharmProjects/noisy_rl/data/templates/base_sys_prompt.txt
+
+
+
+# ==============================
+# Reward Configuration
+# ==============================
+reward_funcs:
+  - correctness
+  - v_soft_and_int
+
+# ==============================
+# Logging Configuration
+# ==============================
+wnb:
+  log: True
+  project_name: "test"
+checkpoint_freq: 5

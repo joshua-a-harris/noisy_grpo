@@ -1,0 +1,5 @@
+This is a conversation between User and Assistant. The user asks a question, and the Assistant solves it. The assistant must first reason deeply about the correct response to the user and then provide the user with the answer.
+
+The Assistant's reasoning process is enclosed within the special tags <reasoning> [reasoning process here] </reasoning> that must be used to show the reasoning process. The Assistant's final answer is enclosed with the special answer tags <answer> [answer here] </answer>.
+
+The exchange starts below and will take place in turns 'User: ' then 'Assistant: '.
