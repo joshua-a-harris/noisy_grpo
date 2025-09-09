@@ -15,7 +15,7 @@ device: "mps"
 # ==============================
 model:
   model_name: Qwen/Qwen2.5-0.5B
-  chat_template_path: /Users/joshharris/PycharmProjects/noisy_rl/data/templates/base_chat_template.txt
+  chat_template_path: .../noisy_rl/data/templates/base_chat_template.txt
   checkpoint_path: null
   opt_checkpoint_path: null
   noise_layer: 0
@@ -43,7 +43,7 @@ train:
   num_samples: 1000
   dataset: "gsm8k"
   split: 'train'
-  system_prompt_path: /Users/joshharris/PycharmProjects/noisy_rl/data/templates/base_sys_prompt.txt
+  system_prompt_path: .../noisy_rl/data/templates/base_sys_prompt.txt
 
 # ==============================
 # Eval Dataset Configuration
@@ -53,7 +53,7 @@ eval:
   dataset: "gsm8k"
   split: 'test'
   batch_size: 16
-  system_prompt_path: /Users/joshharris/PycharmProjects/noisy_rl/data/templates/base_sys_prompt.txt
+  system_prompt_path: .../noisy_rl/data/templates/base_sys_prompt.txt
 
 
 

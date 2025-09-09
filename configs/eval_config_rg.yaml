@@ -17,8 +17,8 @@ device: "cuda"
 model:
   model_name: meta-llama/Llama-3.2-1B-Instruct
   chat_template_path: null
-  checkpoint_path: /temp_hps/torchtune/sudoku_noise/checkpoint_final_step
-  tokenizer_path: /temp_hps/hf_model_local/Llama-3.2-1B-Instruct
+  checkpoint_path: .../noisy_rl/outputs/test_run/checkpoint_final_step
+  tokenizer_path: .../Llama-3.2-1B-Instruct
   noise_layer: 0
   noise_scaling_factor: 0
 

@@ -16,8 +16,8 @@ device: "cuda"
 # ==============================
 model:
   model_name: Qwen/Qwen2.5-0.5B
-  chat_template_path: /root/noisy_rl/data/templates/base_chat_template.txt
-  checkpoint_path: /root/noisy_rl/outputs/test_run/checkpoint_550
+  chat_template_path: .../noisy_rl/data/templates/base_chat_template.txt
+  checkpoint_path: .../noisy_rl/outputs/test_run/checkpoint_550
   noise_layer: 0
   noise_scaling_factor: 0
 
@@ -28,7 +28,7 @@ eval:
   dataset: "gsm8k"
   split: 'test'
   batch_size: 256
-  system_prompt_path: /root/noisy_rl/data/templates/base_sys_prompt.txt
+  system_prompt_path: .../noisy_rl/data/templates/base_sys_prompt.txt
   num_repeats_per_seq: 1
   max_gen_toks: 400
   tok_sampling: False
