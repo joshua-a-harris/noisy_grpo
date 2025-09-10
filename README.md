@@ -3,7 +3,7 @@
 
 ![NoisyRL](./image.png)
 
-[BLOG](https://joshuaharrissite.substack.com/p/noisy-rl)]
+[BLOG](https://joshuaharrissite.substack.com/p/noisy-rl)
 
 ## About
 
